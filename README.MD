@@ -6,8 +6,8 @@ Seja o melhor e vença a máquina.
 ## INSTALAÇÃO
 Faça [DOWNLOAD](https://github.com/lucas-fsousa/Jokenpo/raw/master/JogoCompilado.zip). 
 Em seguida, localize o arquivo "JogoCompilado.zip" e descompacte em uma pasta de sua escolha. 
-Na pasta "RunInstall" instale o executor de console da Microsoft de acordo com o sistema operacional de 32bits ou 64bits. 
-Uma vez instalado o executor de console, entre na pasta "Game" e execute o aplicativo "Jokenpo".
+Na pasta "RunInstall" instale as dependencias de acordo com o tipo do sistema operacional [32bits / x86] ou [64bits / x64]. 
+Uma vez instalado as dependencias, entre na pasta "Game" e execute o aplicativo "Jokenpo".
 
 ## CONSIDERACÕES
 Caso o sistema informe que o aplicativo possui fonte desconhecida, procure a opção "MAIS INFORMAÇÔES" ou "continuar com a execução", em seguida selecione a opção de iniciar execução.
