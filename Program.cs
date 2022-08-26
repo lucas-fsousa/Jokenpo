@@ -1,14 +1,14 @@
 ﻿using Jokenpo;
+using ProjectExtends;
 
 namespace Principal {
   public class Program {
 
     static void Main(string[] args) {
-
-      Helper.WriteLineColor(ConsoleColor.Magenta, string.Concat(" ", new string('*', 10), " BEM VINDO AO JOKENPO GAME ", new string('*', 10)));
+      Extension.Println($"{string.Concat(" ", new string('*', 10), " ##C07[BEM]## ##C02[VINDO]## AO ##c03[JOKENPO]## ##c04[GAME]## ", new string('*', 10))}");
       bool desistir = false;
 
-      Console.Write("\n NOME DO JOGADOR/JOGADORA: ");
+      Extension.Print("\n ##C15[NOME DO JOGADOR/JOGADORA]##: ");
       var jogador = new Jogador(Console.ReadLine());
       var maquina = new Jogador();
 
@@ -16,11 +16,12 @@ namespace Principal {
         var vencedor = AvaliarJogada(jogador, maquina);
 
         if(vencedor.Nome.Equals("MAQUINA")) {
-          Helper.WriteLineColor(ConsoleColor.Red, $" GAME OVER {jogador.Nome}! ");
-          Helper.WriteLineColor(ConsoleColor.Yellow, " VOCÊ PERDEU PORQUE A MAQUINA É IMPLACAVEL!!! ");
-          Helper.WriteLineColor(ConsoleColor.Cyan, $" SEU RANK FOI: {jogador.Rank} ");
+          Extension.Println($" ##C13[GAME OVER]## ##c11[{jogador.Nome}]##! ");
+          Extension.Println($" {jogador.Nome} ESCOLHEU ##C14[{jogador.Escolha}]## E A MAQUINA ESCOLHEU ##c11[{maquina.Escolha}]##! ");
+          Extension.Println(" VOCÊ PERDEU PORQUE A MAQUINA É ##C13[IMPLACAVEL]##!!! ");
+          Extension.Println($" SEU RANK MAXIMO FOI: ##C12[[{jogador.Rank}]]## COM UM TOTAL DE ##C12[{jogador.Vitorias}]## VITORIAS!");
 
-          Console.Write("\n DIGITE [1] PARA CONTINUAR JOGANDO! ");
+          Extension.Print("\n ##C15[DIGITE [1] PARA CONTINUAR JOGANDO]##: ");
           var resposta = Console.ReadLine();
           if(!string.IsNullOrEmpty(resposta)) {
 
@@ -37,12 +38,12 @@ namespace Principal {
           }
 
         } else {
-          Helper.WriteLineColor(ConsoleColor.Magenta, " VOCE GANHOU ESTA PARTIDA ");
+          Extension.Println(" ##C14[VOCE GANHOU ESTA PARTIDA]## ");
           jogador.SubirRank();
         }
       }
 
-      Helper.WriteLineColor(ConsoleColor.Gray, string.Concat("\n ", new string('*', 13), " JOGO ENCERRADO! ", new string('*', 13)));
+      Extension.Println($"{string.Concat(" ", new string('*', 13), " ##C07[JOGO ENCERRADO]##! ", new string('*', 13))}");
     }
 
     static Jogador AvaliarJogada(Jogador player1, Jogador maquina) {
@@ -53,32 +54,30 @@ namespace Principal {
         maquina.Escolher();
 
         if(Escolha.None == player1.Escolha) {
-          Helper.WriteLineColor(ConsoleColor.White, " VOCÊ NÃO JOGOU. DESCANSE E TENTE NOVAMENTE. ");
+          Extension.Println(" ##C16[VOCÊ NÃO JOGOU. DESCANSE E TENTE NOVAMENTE]##. ");
           return maquina;
         }
 
 
-        Helper.WriteColor(ConsoleColor.Green, " JOOOOO ");
-        Thread.Sleep(1000);
-        Helper.WriteColor(ConsoleColor.Blue, "KEEEEENNNNN ");
-        Thread.Sleep(1000);
-        Helper.WriteLineColor(ConsoleColor.DarkYellow, "POOOOOOOOOOOOOOOOOOOOOO ");
-        Thread.Sleep(1000);
+        Extension.Print(" ##C11[JOOOOO...]## ");
+        Thread.Sleep(1500);
+        Extension.Print("##C10[KEEEEEEEENNNNNNN...]##");
+        Thread.Sleep(1500);
+        Extension.Println("##C07[POOOOOOOOOOOOOOOOOOOOOO]##!");
+        Thread.Sleep(500);
 
         if(player1.Escolha == maquina.Escolha) {
-          Helper.WriteLineColor(ConsoleColor.DarkBlue, " TEMOS UM EMPATE! ");
-          Helper.WriteColor(ConsoleColor.Yellow, $" {player1.Nome} ESCOLHEU [{player1.Escolha}] ");
-          Console.Write(" E ");
-          Helper.WriteLineColor(ConsoleColor.Yellow, $" A {maquina.Nome} ESCOLHEU [{player1.Escolha}] ");
+          Extension.Println(" ##C02[TEMOS UM EMPATE]##! ");
+          Extension.Println($" ##C15[{player1.Nome}]## ESCOLHEU ##C03[[{player1.Escolha}]]## E ##C15[{maquina.Nome}]## ESCOLHEU ##C03[[{maquina.Escolha}]]##");
           continue;
 
-        } else if((player1.Escolha == Escolha.Jo) && (maquina.Escolha == Escolha.Po)) {
+        } else if((player1.Escolha == Escolha.PEDRA) && (maquina.Escolha == Escolha.TESOURA)) {
           retorno = player1;
 
-        } else if((player1.Escolha == Escolha.Ken) && (maquina.Escolha == Escolha.Jo)) {
+        } else if((player1.Escolha == Escolha.PAPEL) && (maquina.Escolha == Escolha.PEDRA)) {
           retorno = player1;
 
-        } else if((player1.Escolha == Escolha.Po) && (maquina.Escolha == Escolha.Ken)) {
+        } else if((player1.Escolha == Escolha.TESOURA) && (maquina.Escolha == Escolha.PAPEL)) {
           retorno = player1;
 
         } else {

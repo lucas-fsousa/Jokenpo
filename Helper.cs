@@ -18,22 +18,8 @@ namespace Jokenpo {
 
   public enum Escolha {
     None = 0,
-    Jo = 1,
-    Ken = 2,
-    Po = 3
-  }
-
-  public static class Helper {
-    public static void WriteColor(ConsoleColor font, string message) {
-      Console.ForegroundColor = font;
-      Console.Write(message);
-      Console.ResetColor();
-    }
-
-    public static void WriteLineColor(ConsoleColor font, string message) {
-      Console.ForegroundColor = font;
-      Console.WriteLine(message);
-      Console.ResetColor();
-    }
+    PEDRA = 1,
+    PAPEL = 2,
+    TESOURA = 3
   }
 }
