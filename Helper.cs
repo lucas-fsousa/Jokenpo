@@ -12,7 +12,8 @@ namespace Jokenpo {
     INSANO,
     MONSTRO,
     MESTRE,
-    LENDARIO
+    LENDARIO,
+    IMPLACAVEL
     
   }
 

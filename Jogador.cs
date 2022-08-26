@@ -17,33 +17,37 @@ namespace Jokenpo {
     }
     public Jogador() {
       Nome = "MAQUINA";
-      Rank = Rank.LENDARIO;
+      Rank = Rank.IMPLACAVEL;
     }
 
     public void SubirRank() {
       Vitorias++;
 
-      if(Rank != Rank.LENDARIO)
+      if(Rank != Rank.IMPLACAVEL)
         Rank++;
 
       if(Rank == Rank.INICIANTE)
        Extension.Println($" {Nome} AGORA É ##C11[[{Enum.GetName(Rank)}]]##!");
 
       else if(Rank == Rank.BRABO)
-       Extension.Println($" TAPORRA O MALUCO É ##c10[[{Enum.GetName(Rank)}]]##!");
+       Extension.Println($" TAPORRAAAAAA O MALUCO {Nome} É ##c10[[{Enum.GetName(Rank)}]]##!");
 
       else if(Rank == Rank.INSANO)
-       Extension.Println($" O POKEMON {Nome} EVOLUIU PARA ##C04[[{Enum.GetName(Rank)}]]##!");
+       Extension.Println($" O POKEMON {Nome} EVOLUIU, QUE ##C04[[{Enum.GetName(Rank)}]]##!");
 
       else if(Rank == Rank.MONSTRO)
-       Extension.Println($" TA SAINDO DA JAULA O ##C07[[{Enum.GetName(Rank)}]]##! BIIIRRRRRLLLLL");
+       Extension.Println($" {Nome} GRITA: TA SAINDO DA JAULA O ##C07[[{Enum.GetName(Rank)}]]##! BIIIRRRRRLLLLL");
 
       else if(Rank == Rank.MESTRE)
        Extension.Println($" {Nome} É O ##C06[[{Enum.GetName(Rank)}]]## DOS MAGOS!");
 
       else if(Rank == Rank.LENDARIO)
-       Extension.Println($" {Nome} SE TORNOU ##C13[[{Enum.GetName(Rank)}]]##!");
+       Extension.Println($" O JOGADOR {Nome} SE TORNOU ##C13[[{Enum.GetName(Rank)}]]##!");
+
+      else
+        Extension.Println($" {Nome} ESTÁ ##C10[[{Enum.GetName(Rank)}]]##! E NEM MESMO A ##C09[MAQUINA]## PODE DERROTA-LO");
     }
+    
     
     public void ResetarRank() {
       Rank = Rank.UNRANKED;
