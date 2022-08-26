@@ -10,6 +10,6 @@ Na pasta "RunInstall" instale o executor de console da Microsoft de acordo com o
 Uma vez instalado o executor de console, entre na pasta "Game" e execute o aplicativo "Jokenpo".
 
 ## CONSIDERACÕES
-Caso o sistema informe que o aplicativo possui fonte desconhecida, procure a opção "continuar com a execução" ou algo semelhante.
+Caso o sistema informe que o aplicativo possui fonte desconhecida, procure a opção "MAIS INFORMAÇÔES" ou "continuar com a execução", em seguida selecione a opção de iniciar execução.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
